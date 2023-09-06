@@ -1,10 +1,10 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.6
 
 import PackageDescription
 
 let package = Package(
     name: "DKCamera",
-    platforms: [.iOS(.v8)],
+    platforms: [.iOS(.v11)],
     products: [
         .library(
             name: "DKCamera",
@@ -16,7 +16,10 @@ let package = Package(
         .target(
             name: "DKCamera",
             dependencies: [],
-            path: "DKCamera"
+            path: "DKCamera",
+            resources: [
+                .process("DKCameraResource.bundle")
+            ]
         )
     ]
 )
