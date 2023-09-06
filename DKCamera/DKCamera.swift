@@ -1164,6 +1164,15 @@ open class DKDefaultCameraResource: DKCameraResource {
     
     open func imageForResource(_ name: String) -> UIImage {
         let bundle = Bundle.cameraBundle()
+        
+        #if DEBUG
+        if let files = try? FileManager.default.contentsOfDirectory(atPath: bundle.bundlePath ){
+                for file in files {
+                    print(file)
+                }
+            }
+        #endif
+        
         let imagePath = bundle.path(forResource: name, ofType: "png", inDirectory: "Images")
         let image = UIImage(contentsOfFile: imagePath!)
         return image!
