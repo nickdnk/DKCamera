@@ -18,7 +18,7 @@ let package = Package(
             dependencies: [],
             path: "DKCamera",
             resources: [
-                .process("DKCameraResource.bundle")
+                .copy("DKCameraResource.bundle")
             ]
         )
     ]
